@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: mysql_wallet
+    restart: always
+    image: mysql:5.7.31
+    network_mode: bridge
+    command: --max_allowed_packet=32505856
+    environment:
+      - MYSQL_DATABASE=wallet
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_TCP_PORT=3303
+    volumes:
+      - mysql-volume:/mysql
+    ports:
+      - 3303:3303
+    expose:
+      - 3303
+volumes:
+  mysql-volume:

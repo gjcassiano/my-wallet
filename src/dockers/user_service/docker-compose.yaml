@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  wallet:
+    container_name: user_service
+    restart: always
+    image: wallet
+#    build: .

@@ -1,0 +1,34 @@
+liquibase {
+    activities {
+        main {
+            changeLogFile 'src/main/resources/db/master-changelog.xml'
+            url 'jdbc:mysql://127.0.0.1:3306/wallet'
+            referenceUrl 'jdbc:mysql://127.0.0.1:3306/wallet'
+
+            referenceUsername 'root'
+            referencePassword ''
+            username 'root'
+            password ''
+
+            driver "com.mysql.cj.jdbc.Driver"
+            referenceDriver "com.mysql.cj.jdbc.Driver"
+
+        }
+        diffMain {
+
+            changeLogFile 'src/main/resources/db/master-changelog.xml'
+            url 'jdbc:mysql://127.0.0.1:3306/wallet'
+//            referenceUrl 'jdbc:mysql://127.0.0.1:3306/wallet'
+
+//            referenceUsername 'root'
+//            referencePassword ''
+            username 'root'
+            password ''
+
+            driver "com.mysql.cj.jdbc.Driver"
+//            referenceDriver "com.mysql.cj.jdbc.Driver"
+
+        }
+    }
+    runList = 'main'
+}
