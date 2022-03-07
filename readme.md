@@ -10,11 +10,16 @@ linux, docker, java11
 On the folder ~/wallet/
 Start the mysql database by docker componse 
 ``
-bash src/dockers/mysql/run.sh
+cd src/dockers/mysql/
+bash run.sh
+cd -
 ``
+
+Now, create the tables using the liquibase framework
+
 Start the datastore database by the command
 ``
-docker run -d -it --rm -p 8081:8081 google/cloud-sdk gcloud beta emulators datastore start --no-store-on-disk --project=giovanic --host-port 0.0.0.0:8081
+docker run -it --name wallet_datastore --rm -p 8081:8081  google/cloud-sdk gcloud beta emulators datastore start --no-store-on-disk --project=giovanic --host-port 0.0.0.0:8081
 ``
 
 Build and Start the wallets, user and transaction microservices by the command
@@ -91,4 +96,45 @@ Get pretty transactions from Logged User
 GET
 /api/v1/transactions/my-transactions
 Get transactions from Logged User
+
+## Steps to test
+
+Visit the user service and create two users like
+/api/v1/users/signup -> Signup
+```
+{
+  "firstName": "Tester",
+  "lastName": "PicPay",
+  "key": "giovanic",
+  "password": "test123"
+}
+```
+```
+{
+  "firstName": "PicPay",
+  "lastName": "Company",
+  "key": "picpay",
+  "password": "test123"
+}
+```
+
+Create the users and signin for autentication
+/api/v1/users/signin -> Signin
+Get the JWT token 
+```
+{
+  "key": "giovanic",
+  "password": "test123"
+}
+```
+
+The get endpoint will return a JWT Token
+example:
+```
+
+```
+ 
+
+## Integration Document
+https://docs.google.com/document/d/1Qb6aun5pNtMIhE_g-UsYEIgmnf2eCwNMV1STSG5JyL0/edit
 
