@@ -45,7 +45,7 @@ dependencies {
 	// Mapstruct
 	implementation 'org.mapstruct:mapstruct:1.2.0.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.2.0.Final'
-//	implementation 'org.projectlombok:lombok-mapstruct-binding:0.1.0'
+
 	// Validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation:2.6.3'
 
@@ -73,13 +73,6 @@ dependencies {
 }
 
 apply plugin: 'org.liquibase.gradle'
-
-dependencyManagement {
-	imports {
-//		mavenBom "com.google.cloud:spring-cloud-gcp-dependencies:${springCloudGcpVersion}"
-//		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
-}
 
 tasks.named('test') {
 	useJUnitPlatform()

@@ -15,7 +15,11 @@ bash run.sh
 cd -
 ``
 
-Now, create the tables using the liquibase framework
+Get the IP Address from mysql docker using this command, CONTAINER_ID you can get using docker ps
+``
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' CONTAINER_ID
+``
+Check if application.properties in spring.datasource.url are using the correct ip
 
 Start the datastore database by the command
 ``
@@ -131,9 +135,11 @@ Get the JWT token
 The get endpoint will return a JWT Token
 example:
 ```
-
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnaW92YW5pYyIsImF1dGgiOlt7ImF1dGhvcml0eSI6IlJPTEVfQ0xJRU5UIn1dLCJpYXQiOjE2NDY2NzIwNDEsImV4cCI6MTY0NjY3NTY0MX0.wuLV9nCGIH5RET1UF9_ae_BCAVYPn_JfiMuxVl9wI_c
 ```
- 
+With token, set authentication in swagger, there are one authorize buttton (do it in the user, wallet and transaction services), click in and fill wiht token.
+Now you are able to do request. 
+
 
 ## Integration Document
 https://docs.google.com/document/d/1Qb6aun5pNtMIhE_g-UsYEIgmnf2eCwNMV1STSG5JyL0/edit
