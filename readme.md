@@ -45,7 +45,7 @@ transaction service example:
 http://172.17.0.6:8080/swagger-ui.html#/
 
 
-##User service has the RESP API
+## User service has the RESP API
 GET
 /api/v1/users/{key}
 Get User by Key
@@ -66,7 +66,7 @@ POST
 /api/v1/users/signup
 Signup
 
-##Wallet service has the RESP API
+## Wallet service has the RESP API
 POST
 /api/v1/wallets/deposit/{money}
 Deposit money to logged user
@@ -83,7 +83,7 @@ POST
 /api/v1/wallets/withdraw/{money}
 Withdraw money from logged user
 
-##Transaction service has the RESP API
+## Transaction service has the RESP API
 GET
 /api/v1/transactions/my-pretty-transactions
 Get pretty transactions from Logged User
