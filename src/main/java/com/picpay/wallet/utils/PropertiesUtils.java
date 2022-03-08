@@ -15,7 +15,6 @@ public class PropertiesUtils {
 
     public static void initProperties() {
         String activeProfile = System.getProperty(SPRING_PROFILES_ACTIVE);
-        System.err.println(activeProfile);
         if (activeProfile == null) {
             activeProfile = "dev";
         }

@@ -1,12 +1,11 @@
 package com.picpay.wallet.datastore;
 
-import com.google.api.client.util.Value;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyFilter;
 import com.googlecode.objectify.ObjectifyService;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -25,10 +24,12 @@ import java.util.Set;
  * Configuration class which configures Objectify
  *
  */
+@Slf4j
 @Configuration
 public class ObjectifyConfig {
 
     private String datastoreHost;
+    private static String PROJECT_ID = "giovanic";
 
     @Autowired
     private Environment environment;
@@ -76,24 +77,14 @@ public class ObjectifyConfig {
             Set<String> activeProfiles = new HashSet<>(Arrays.asList(environment.getActiveProfiles()));
             DatastoreOptions.Builder datastoreBuilder = DatastoreOptions.newBuilder();
             datastoreHost = System.getenv("DATASTORE_HOST");
-            System.out.println("Connecting to " + datastoreHost + " datastore server");
 
-            datastoreBuilder.setHost(datastoreHost).setProjectId("giovanic");
-            if (activeProfiles.contains("DEV")) {
-//                datastoreBuilder = datastoreBuilder.setHost(DATASTORE_LOCALHOST_URL).setProjectId("LOCALHOST");
-//            } else if (activeProfiles.contains(GalvinConstants.PROD_PROFILE)) {
-//                datastoreBuilder = datastoreBuilder.setProjectId(AppEngineUtils.GALVIN_PROD_NAME).setCredentials(GoogleCredentials.getApplicationDefault());
-//            } else if (activeProfiles.contains(GalvinConstants.MDUAT_PROFILE)) {
-//                datastoreBuilder = datastoreBuilder.setProjectId(AppEngineUtils.GALVIN_MDUAT_NAME).setCredentials(GoogleCredentials.getApplicationDefault());
-//            } else {
-//                datastoreBuilder = datastoreBuilder.setProjectId(AppEngineUtils.GALVIN_DEV_NAME).setCredentials(GoogleCredentials.getApplicationDefault());
-//
-//                String namespace = getNamespace();
-//                if (!"default".equals(namespace)) {
-//                    datastoreBuilder = datastoreBuilder.setNamespace(namespace);
-//                }
-//                log.info("Datastore Namespace specified: ".concat(namespace));
+            log.info("Connecting to " + datastoreHost + " datastore server");
+
+            if (datastoreHost != null && datastoreHost.length() > 0) {
+                datastoreBuilder.setHost(datastoreHost);
             }
+
+            datastoreBuilder.setProjectId(PROJECT_ID);
 
             ObjectifyService.init(new ObjectifyFactory(datastoreBuilder.build().getService()));
         }

@@ -1,7 +1,6 @@
 package com.picpay.wallet.services;
 
 import com.picpay.wallet.common.GenericService;
-import com.picpay.wallet.entities.User;
 import com.picpay.wallet.entities.Wallet;
 
 /**

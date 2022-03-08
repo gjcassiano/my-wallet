@@ -1,31 +1,18 @@
 package com.picpay.wallet.services;
 
-import com.google.common.primitives.Longs;
 import com.picpay.wallet.common.GenericServiceImpl;
 import com.picpay.wallet.entities.Transaction;
-import com.picpay.wallet.entities.User;
-import com.picpay.wallet.entities.UserRole;
 import com.picpay.wallet.entities.Wallet;
 import com.picpay.wallet.enuns.TransactionStatus;
 import com.picpay.wallet.enuns.TransactionType;
 import com.picpay.wallet.exceptions.BadRequestException;
-import com.picpay.wallet.exceptions.DuplicateRequestException;
-import com.picpay.wallet.exceptions.NotFoundException;
 import com.picpay.wallet.mapper.WalletMapper;
-import com.picpay.wallet.repositories.UserRepository;
 import com.picpay.wallet.repositories.WalletRepository;
-import com.picpay.wallet.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Date;
-import java.util.Optional;
 
 /**
  * @author Giovani Cassiano (gjcassiano@gmail.com)

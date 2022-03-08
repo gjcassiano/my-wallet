@@ -3,7 +3,6 @@ package com.picpay.wallet.services;
 import com.picpay.wallet.entities.Transaction;
 import com.picpay.wallet.entities.User;
 import com.picpay.wallet.repositories.TransactionRepository;
-import com.picpay.wallet.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,8 +34,6 @@ public class TransactionServiceImp implements TransactionService{
     public List<String> loggedPrettyExtract() {
         User logged = userService.getLoggedUser();
         List<Transaction> transactions = transactionRepository.findAllByUserKey(logged.getKey());
-
-//        transactions.forEach(transaction -> transactionRepository.delete(transaction));
 
         return transactions.stream().map(transaction -> {
             String log = transaction.getDate().toString() + " ";

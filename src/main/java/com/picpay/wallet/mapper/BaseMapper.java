@@ -3,7 +3,6 @@ package com.picpay.wallet.mapper;
 import com.picpay.wallet.dto.BaseEntityDTO;
 import com.picpay.wallet.entities.BaseEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 

@@ -12,7 +12,5 @@ import lombok.EqualsAndHashCode;
 public class BaseEntityDTO {
 
     private Long id;
-//    private String createdDate;
-//    private String updatedDate;
 
 }

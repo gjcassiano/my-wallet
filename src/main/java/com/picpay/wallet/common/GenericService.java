@@ -15,7 +15,6 @@ import java.util.function.Function;
  * Generic service for CRUD operations
  *
  * @param <T> The entity in which the service is working on.
- * @author kevinb
  */
 public interface GenericService<T> {
 

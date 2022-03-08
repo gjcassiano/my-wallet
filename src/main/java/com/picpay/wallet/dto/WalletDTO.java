@@ -2,9 +2,6 @@ package com.picpay.wallet.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.mapstruct.BeforeMapping;
-
-import javax.validation.constraints.NotEmpty;
 
 /**
  * @author Giovani Cassiano (gjcassiano@gmail.com)

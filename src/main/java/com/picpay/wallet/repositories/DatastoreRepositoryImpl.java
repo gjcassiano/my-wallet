@@ -4,16 +4,12 @@ import com.googlecode.objectify.Key;
 import com.picpay.wallet.exceptions.BadRequestException;
 import com.picpay.wallet.exceptions.NotFoundException;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.PersistenceException;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;

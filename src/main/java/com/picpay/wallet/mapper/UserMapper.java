@@ -2,7 +2,6 @@ package com.picpay.wallet.mapper;
 
 import com.picpay.wallet.dto.UserDTO;
 import com.picpay.wallet.entities.User;
-import org.mapstruct.MapMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;

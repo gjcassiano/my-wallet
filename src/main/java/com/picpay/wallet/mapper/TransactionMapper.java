@@ -3,7 +3,6 @@ package com.picpay.wallet.mapper;
 import com.picpay.wallet.dto.TransactionDTO;
 import com.picpay.wallet.entities.Transaction;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 

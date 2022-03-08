@@ -1,6 +1,7 @@
 package com.picpay.wallet;
 
 import com.picpay.wallet.utils.PropertiesUtils;
+import lombok.extern.slf4j.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,13 +9,14 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.TimeZone;
 
+@Slf4j
 @SpringBootApplication
 public class WalletApplication {
 	public static void main(String[] args) {
 		PropertiesUtils.initProperties();
 
 		try {
-			System.out.println(InetAddress.getLocalHost().getHostAddress());
+			log.info("Host IP: " + InetAddress.getLocalHost().getHostAddress());
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
