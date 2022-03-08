@@ -144,3 +144,9 @@ Now you are able to do request.
 ## Integration Document
 https://docs.google.com/document/d/1Qb6aun5pNtMIhE_g-UsYEIgmnf2eCwNMV1STSG5JyL0/edit
 
+
+
+
+## Status
+- Tests developing
+- Asynchronous method developing
