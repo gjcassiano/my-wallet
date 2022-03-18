@@ -108,16 +108,16 @@ Visit the user service and create two users like
 ```
 {
   "firstName": "Tester",
-  "lastName": "PicPay",
+  "lastName": "QA",
   "key": "giovanic",
   "password": "test123"
 }
 ```
 ```
 {
-  "firstName": "PicPay",
+  "firstName": "Test",
   "lastName": "Company",
-  "key": "picpay",
+  "key": "test1",
   "password": "test123"
 }
 ```

@@ -5,7 +5,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.picpay'
+group = 'com.wallet'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -20,7 +20,7 @@ repositories {
 }
 
 ext {
-//	set('springCloudGcpVersion', "3.1.0")
+	set('springCloudGcpVersion', "3.1.0")
 	set('springCloudVersion', "2021.0.1")
 	offlineCompile = new File("$buildDir/output/lib")
 }
@@ -51,6 +51,12 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 //	implementation 'com.google.cloud:spring-cloud-gcp-starter-pubsub'
+
+	implementation 'org.springframework.cloud:spring-cloud-gcp-pubsub:1.2.8.RELEASE'
+//	implementation 'org.springframework.cloud:spring-cloud-gcp-autoconfigure:1.1.0.RELEASE'
+	implementation group: 'org.springframework.integration', name: 'spring-integration-core'
+
+
 	implementation 'org.liquibase:liquibase-core'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly "mysql:mysql-connector-java"
